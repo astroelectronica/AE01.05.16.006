@@ -1,0 +1,16 @@
+*
+*load
+.meas i_load find I(I1) when time=2m
+.meas v_load find  V(/out) when time=2m
+.meas p_load param (i_load*v_load) when time=2m
+*
+*source
+.meas i_source find I(V1) when time=2m
+.meas v_source find V(vcc) when time=2m
+.meas p_source param (i_source*v_source)
+*
+*ldo
+.meas v_adj find V(/adj) when time=2m
+.meas p_ldo find (V(vcc,/out)*I(I1)) when time=2m
+.meas efficiency param ((p_load/p_source)*100)
+*

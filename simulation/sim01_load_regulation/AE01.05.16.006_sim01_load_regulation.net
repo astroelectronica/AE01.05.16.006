@@ -1,0 +1,10 @@
+*load regulation
+.include ../AE01.05.16.006.cir
+.param VIN=9
+.step param ILOAD 0.01 0.1 0.01
+.param Radj=9.31K
+.param Rref=5.62K
+.param Ren=51K
+.param x_base=2m
+.tran 0 {x_base} 0 100n uic
+.backanno
